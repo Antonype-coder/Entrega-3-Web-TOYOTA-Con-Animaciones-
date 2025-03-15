@@ -1,0 +1,109 @@
+
+$color-fondo-principal: rgb(178, 159, 142);
+$color-fondo-productos: #a35151;
+$color-texto: #944545;
+$color-fondo-producto: #cac7c7;
+
+
+@mixin zoom-imagen($escala: 1.1, $duracion: 0.3s) {
+    transition: transform $duracion ease;
+    &:hover {
+        transform: scale($escala);
+    }
+}
+
+
+@mixin slide-up($distancia: 10px, $duracion: 0.3s) {
+    transition: transform $duracion ease;
+    &:hover {
+        transform: translateY(-$distancia);
+    }
+}
+
+
+main {
+    background-color: $color-fondo-principal;
+    
+    h2 {
+        padding: 20px;
+        text-align: center;
+        font-size: 30px;
+        color: $color-texto;
+    }
+
+    .productos {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);  
+        gap: 20px;
+        padding: 20px;
+        background-color: $color-fondo-productos;
+        
+        .producto {
+            background-color: $color-fondo-producto;
+            padding: 20px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+    
+            
+            h3, p {
+                @include slide-up(5px, 0.3s);
+            }
+    
+            
+            img {
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+                margin-bottom: 10px;
+                @include zoom-imagen(1.1, 0.3s);
+            }
+    
+            
+            h3 {
+                font-size: 25px;
+                margin-bottom: 10px;
+            }
+    
+            
+            p {
+                font-size: 15px;
+                margin-bottom: 10px;
+            }
+    
+            
+            &:hover {
+                background-color: darken($color-fondo-producto, 10%);
+            }
+        }
+    }
+    
+
+    @media (max-width: 768px) {
+        .productos {
+            grid-template-columns: repeat(2, 1fr); 
+        }
+    }
+    
+    
+    @media (max-width: 441px) {
+        .productos {
+            grid-template-columns: 1fr;  
+        }
+    
+        .producto {
+            padding: 15px;
+        }
+    
+        img {
+            width: 100%;  
+        }
+    
+        h3 {
+            font-size: 22px;
+        }
+    
+        p {
+            font-size: 14px;
+        }
+    }
+}   

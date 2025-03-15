@@ -1,0 +1,115 @@
+@use 'scss/header.scss';
+@use 'scss/aside.scss';
+@use 'scss/main.scss';
+@use 'scss/footer.scss';
+@use 'scss/body.scss';
+@use 'scss/barra-promocion.scss';
+
+
+@media (min-width: 1024px) {
+    header {
+        padding: 20px 50px;
+    }
+
+    nav ul {
+        justify-content: space-evenly;
+    }
+
+    .productos {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (max-width: 1023px) {
+    header {
+        padding: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .productos {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .producto {
+        padding: 15px;
+    }
+
+    img {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+@media (min-width: 1024px) {
+    header {
+        padding: 20px 50px;
+    }
+
+    nav ul {
+        justify-content: space-evenly;
+    }
+
+    .productos {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (max-width: 1023px) {
+    header {
+        padding: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .productos {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .producto {
+        padding: 15px;
+    }
+
+    img {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+
+@media (max-width: 441px) {
+    header {
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .productos {
+        grid-template-columns: 1fr; 
+    }
+
+    .producto {
+        padding: 10px;
+    }
+
+    img {
+        width: 100%;
+        max-width: 100%; 
+    }
+
+    .boton-base {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+

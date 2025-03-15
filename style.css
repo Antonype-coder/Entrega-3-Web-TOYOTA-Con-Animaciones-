@@ -1,0 +1,258 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d0bebe;
+  padding: 20px;
+}
+
+nav {
+  background-color: #ac7b7b;
+  padding: 20px;
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+nav li {
+  list-style: none;
+}
+nav a {
+  text-decoration: none;
+}
+
+img {
+  width: 400px;
+  transition: transform 0.3s ease;
+}
+img:hover {
+  transform: scale(1.1);
+}
+
+.boton-base, nav a {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  color: #e3d0d0;
+  background-color: #b93f3f;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.boton-base:hover, nav a:hover {
+  background-color: #d0bebe;
+}
+
+aside {
+  background-color: rgb(148, 106, 91);
+}
+aside h2 {
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+}
+aside p {
+  padding: 20px;
+  text-align: center;
+  font-size: 15px;
+}
+
+main {
+  background-color: rgb(178, 159, 142);
+}
+main h2 {
+  padding: 20px;
+  text-align: center;
+  font-size: 30px;
+  color: #944545;
+}
+main .productos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  background-color: #a35151;
+}
+main .productos .producto {
+  background-color: #cac7c7;
+  padding: 20px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+main .productos .producto h3, main .productos .producto p {
+  transition: transform 0.3s ease;
+}
+main .productos .producto h3:hover, main .productos .producto p:hover {
+  transform: translateY(-5px);
+}
+main .productos .producto img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+main .productos .producto img:hover {
+  transform: scale(1.1);
+}
+main .productos .producto h3 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+main .productos .producto p {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+main .productos .producto:hover {
+  background-color: rgb(177.2018348624, 172.7981651376, 172.7981651376);
+}
+@media (max-width: 768px) {
+  main .productos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 441px) {
+  main .productos {
+    grid-template-columns: 1fr;
+  }
+  main .producto {
+    padding: 15px;
+  }
+  main img {
+    width: 100%;
+  }
+  main h3 {
+    font-size: 22px;
+  }
+  main p {
+    font-size: 14px;
+  }
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(191, 206, 185);
+  color: rgb(128, 67, 67);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.promociones-barra {
+  background-color: #b93f3f;
+  color: #ffffff;
+  font-size: 40px;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.promociones-barra .promociones-contenido {
+  position: absolute;
+  white-space: nowrap;
+  animation: moverTexto 10s linear infinite;
+}
+@keyframes moverTexto {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (min-width: 1024px) {
+  header {
+    padding: 20px 50px;
+  }
+  nav ul {
+    justify-content: space-evenly;
+  }
+  .productos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 1023px) {
+  header {
+    padding: 15px;
+  }
+  nav ul {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .productos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .producto {
+    padding: 15px;
+  }
+  img {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+@media (min-width: 1024px) {
+  header {
+    padding: 20px 50px;
+  }
+  nav ul {
+    justify-content: space-evenly;
+  }
+  .productos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 1023px) {
+  header {
+    padding: 15px;
+  }
+  nav ul {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .productos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .producto {
+    padding: 15px;
+  }
+  img {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+@media (max-width: 441px) {
+  header {
+    padding: 10px;
+  }
+  nav ul {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .productos {
+    grid-template-columns: 1fr;
+  }
+  .producto {
+    padding: 10px;
+  }
+  img {
+    width: 100%;
+    max-width: 100%;
+  }
+  .boton-base {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

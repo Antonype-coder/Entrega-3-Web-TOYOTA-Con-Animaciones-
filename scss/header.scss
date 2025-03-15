@@ -1,0 +1,71 @@
+$color-fondo-header: #d0bebe; 
+$color-fondo-nav: #b93f3f; 
+$color-boton: #b93f3f; 
+$color-boton-hover: #d0bebe; 
+$color-texto: #e3d0d0; 
+
+@mixin zoom-imagen($escala: 1.1, $duracion: 0.3s) {
+    transition: transform $duracion ease;
+    &:hover {
+        transform: scale($escala);
+    }
+}
+
+@mixin fondo($color) {
+    background-color: $color;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    @include fondo($color-fondo-header);
+}
+
+
+nav {
+    background-color: #ac7b7b;
+    padding: 20px;
+    ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+img {
+    width: 400px;
+    @include zoom-imagen(1.1, 0.3s);
+}
+
+
+.boton-base {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    color: $color-texto;
+    background-color: $color-boton;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: $color-boton-hover; 
+    }
+}
+
+
+nav a {
+    @extend .boton-base; 
+}
+
+

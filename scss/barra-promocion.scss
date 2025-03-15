@@ -1,0 +1,33 @@
+$color-fondo-promocion: #b93f3f;  
+$color-texto-promocion: #ffffff;  
+
+.promociones-barra {
+    background-color: $color-fondo-promocion;  
+    color: $color-texto-promocion;  
+    font-size: 40px;  
+    text-align: center;  
+    padding: 20px;  
+    width: 100%;  
+    position: relative;  
+    overflow: hidden;  
+
+    display: flex; 
+    align-items: center;  
+    justify-content: center; 
+
+    .promociones-contenido {
+        position: absolute;  
+        white-space: nowrap;  
+        animation: moverTexto 10s linear infinite;  
+    }
+
+    @keyframes moverTexto {
+        0% {
+            transform: translateX(100%);  
+        }
+        100% {
+            transform: translateX(-100%);  
+        }
+    }
+}
+

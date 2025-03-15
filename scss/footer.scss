@@ -1,0 +1,9 @@
+$color-fondo-footer:rgb(191, 206, 185);
+$color-texto:rgb(128, 67, 67);
+
+footer{
+    padding: 20px;
+    text-align: center;
+    background-color: $color-fondo-footer;
+    color: $color-texto;
+}
