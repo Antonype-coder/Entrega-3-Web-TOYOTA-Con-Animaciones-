@@ -76,34 +76,4 @@ main {
             }
         }
     }
-    
-
-    @media (max-width: 768px) {
-        .productos {
-            grid-template-columns: repeat(2, 1fr); 
-        }
-    }
-    
-    
-    @media (max-width: 441px) {
-        .productos {
-            grid-template-columns: 1fr;  
-        }
-    
-        .producto {
-            padding: 15px;
-        }
-    
-        img {
-            width: 100%;  
-        }
-    
-        h3 {
-            font-size: 22px;
-        }
-    
-        p {
-            font-size: 14px;
-        }
-    }
-}   
+}
